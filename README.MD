@@ -37,12 +37,12 @@ $  source bin/activate
 
 **3. Clone this project**
 ```
-$  git clone https:****
+$  git clone https:https://github.com/heavyray/search_hotels_telegram_bot.git
 ```
 
 Then, Enter the project
 ```
-$  cd ***
+$  cd search_hotels_telegram_bot
 ```
 
 **4. Install Requirements from 'requirements.txt'**
