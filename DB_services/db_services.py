@@ -7,7 +7,7 @@ from user import Hotel
 
 def save_search(chat_id: int, command: str, city: str, hotels_list: List[Hotel]) -> None:
     """Функция сохраняет параметры поиска в БД"""
-    sqlite_connection = sqlite3.connect('../db.db', check_same_thread=False)
+    sqlite_connection = sqlite3.connect('../db.sqlite3', check_same_thread=False)
     cursor = sqlite_connection.cursor()
 
     cursor.execute(f"""INSERT INTO history(chat_id, city, command, date) 
@@ -34,7 +34,7 @@ def save_hotels(cursor, search_id, hotels_list):
 
 def get_history(chat_id: int) -> list:
     """Функция возвращает последние запросы пользователя"""
-    sqlite_connection = sqlite3.connect('../db.db', check_same_thread=False)
+    sqlite_connection = sqlite3.connect('../db.sqlite3', check_same_thread=False)
     cursor = sqlite_connection.cursor()
     sqlite_select_query = f"""SELECT * from history WHERE chat_id = {chat_id} ORDER BY date DESC LIMIT 5"""
     cursor.execute(sqlite_select_query)
@@ -47,7 +47,7 @@ def get_history(chat_id: int) -> list:
 
 def get_hotels(search_id: int) -> list:
     """Функция возвращает найденные отели по id поиска"""
-    sqlite_connection = sqlite3.connect('../db.db', check_same_thread=False)
+    sqlite_connection = sqlite3.connect('../db.sqlite3', check_same_thread=False)
     cursor = sqlite_connection.cursor()
     sqlite_select_query = f"""SELECT * from hotel WHERE search_id = '{search_id}'"""
     cursor.execute(sqlite_select_query)
