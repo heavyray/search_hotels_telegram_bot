@@ -37,7 +37,7 @@ $  source bin/activate
 
 **3. Clone this project**
 ```
-$  git clone https:https://github.com/heavyray/search_hotels_telegram_bot.git
+$  git clone https://github.com/heavyray/search_hotels_telegram_bot.git
 ```
 
 Then, Enter the project
